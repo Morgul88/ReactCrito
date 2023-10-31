@@ -5,12 +5,12 @@ const Newsbox = () => {
     const [value, setValue] = useState([]);
     
     useEffect(() => {
-        ChangePost();
+       ChangePost()
     },[])
 
-    const specificIds = ["c7bbc3d6-d88e-4d25-a3bf-faeb9fcefd15","bfb418f3-be63-4ded-a9c3-880409a465b7","b33aa046-3229-4990-b70d-1d44a6e0e3dd"];
-    const specificIdsSec = ["9efedf73-c922-428b-89cd-911e23f7183e","78ca8156-5826-44ba-a8ba-b2a428e95afb","a0344661-267f-4f3d-ae16-c13a5045f00c",];
-    const specificIdsThird = ["0dccab16-917a-437c-8216-5365b8b89ac3","1712fde0-7afc-44e7-ab41-7cffb65dc58b","f8994aa3-1a7d-4df4-abda-0f170377ce5f",];
+    const specificIds = ["0dccab16-917a-437c-8216-5365b8b89ac3","1712fde0-7afc-44e7-ab41-7cffb65dc58b","f8994aa3-1a7d-4df4-abda-0f170377ce5f","c7bbc3d6-d88e-4d25-a3bf-faeb9fcefd15","bfb418f3-be63-4ded-a9c3-880409a465b7","b33aa046-3229-4990-b70d-1d44a6e0e3dd","9efedf73-c922-428b-89cd-911e23f7183e","78ca8156-5826-44ba-a8ba-b2a428e95afb","a0344661-267f-4f3d-ae16-c13a5045f00c",];
+    // const specificIds = [];
+    // const specificIds = [];
     
     const ChangePost = async () => {
         
@@ -61,7 +61,7 @@ const Newsbox = () => {
                         }
                         return null; // Om id inte finns i listan, returnera inget
                     })}
-                    {value.map((items) => {
+                    {/* {value.map((items) => {
                         if (specificIdsSec.includes(items.id)) {
                             return (
                                 
@@ -83,8 +83,8 @@ const Newsbox = () => {
                             );
                         }
                         return null; // Om id inte finns i listan, returnera inget
-                    })}
-                    {value.map((items) => {
+                    })} */}
+                    {/* {value.map((items) => {
                         if (specificIdsThird.includes(items.id)) {
                             return (
                                 
@@ -106,7 +106,7 @@ const Newsbox = () => {
                             );
                         }
                         return null; // Om id inte finns i listan, returnera inget
-                    })}
+                    })} */}
 
                 </div>
                 <div className="dots more">
