@@ -1,8 +1,9 @@
 
 import React from 'react'
 import img_logo from '../../assets/images/Logo (2).svg'
-import './Header.css'
 import Button from '../Generics/Button'
+import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
             
             <button className="btn-menubars"><i className="fa-solid fa-bars-staggered"></i></button>
             <div className="logotype">
-                <a href="index.html" className="logotype"><img src={img_logo} alt="logo"/></a>
+                <Link to="index.html" className="logotype"><img src={img_logo} alt="logo"/></Link>
             </div>
             <div className="contactinformation-bar">
                 <div className="content-box">
@@ -29,23 +30,24 @@ const Header = () => {
             </div>
             <div className="socialmedia-bar">
                 
-                <a href="http://facebook.com" target="_blank"><i className="fa-brands fa-facebook"></i></a>
-                <a href="http://twitter.com" target="_blank"><i className="fa-brands fa-twitter"></i></a>
-                <a href="http://instagram" target="_blank"><i className="fa-brands fa-instagram"></i></a>
-                <a href="http://linkedin.com" target="_blank"><i className="fa-brands fa-linkedin"></i></a>
+                <Link to="http://facebook.com" target="_blank"><i className="fa-brands fa-facebook"></i></Link>
+                <Link to="http://twitter.com" target="_blank"><i className="fa-brands fa-twitter"></i></Link>
+                <Link to="http://instagram.com" target="_blank"><i className="fa-brands fa-instagram"></i></Link>
+                <Link to="http://linkedin.com" target="_blank"><i className="fa-brands fa-linkedin"></i></Link>
             </div>
             <div className="menu">
                 
                 <nav>
-                    <a className="active" href="index.html">Home</a>
-                    <a href="service.html">Service</a>
-                    <a href="news.html">News</a>
-                    <a href="contact.html">Contact</a>
+                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/services">Service</NavLink>
+                    <NavLink to="/News">News</NavLink>
+                    <NavLink to="/Contacts">Contact</NavLink>
+                    
                 </nav>
 
                 
                 <div className="loginknapp">
-                    <Button text="Login" url="/login" />
+                    <Button type="yellow" text="Login" url="/login" />
                 </div> 
                 
             </div>

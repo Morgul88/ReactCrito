@@ -1,15 +1,15 @@
 import React from 'react'
 import img_backgroundlines from '../../assets/images/background-lines - Copy.svg'
 import img_maninsuit from '../../assets/images/showcase-image.svg'
-import './Showcase.css'
 import Button from '../Generics/Button'
+
 
 
 const Showcase = () => {
   return (
     <section className="showcase">
             
-        <img className="waves" src={img_backgroundlines} alt=""/>
+        <img className="waves" src={img_backgroundlines} alt="waves"/>
         
         <div className="container">
             <div className="content">

@@ -7,6 +7,11 @@ html, body {
   font-weight: 400;
 }
 
+.pagenotfound {
+  color: 255;
+  border: 1px solid black;
+}
+
 footer {
   background-color: #0E1021;
 }
@@ -39,13 +44,12 @@ footer {
 
 .btn-yellow {
   background-color: #F9D783;
-  border: 1px solid #F9D783;
   color: #191919;
   text-decoration: none;
   padding: 12px 25px;
   border-radius: 25px;
   font-weight: 600;
-  transition: background-color 0.5s;
+  transition: 0.4s;
 }
 .btn-yellow i {
   margin-left: 8px;
@@ -53,7 +57,6 @@ footer {
 }
 .btn-yellow:hover {
   background-color: #191919;
-  border: 1px solid #191919;
   color: #d5d3d3;
 }
 
@@ -65,7 +68,7 @@ footer {
   padding: 12px 25px;
   border-radius: 25px;
   font-weight: 600;
-  transition: background-color 0.5s;
+  transition: background-color 0.3s;
 }
 .btn-transparent i {
   margin-left: 8px;
@@ -79,7 +82,6 @@ footer {
 
 .btn-long {
   background-color: #F9D783;
-  border: 1px solid #F9D783;
   color: #191919;
   text-decoration: none;
   padding: 12px 25px;
@@ -93,7 +95,6 @@ footer {
 }
 .btn-long:hover {
   background-color: #191919;
-  border: 1px solid #191919;
   color: #d5d3d3;
 }
 
@@ -116,6 +117,220 @@ footer {
   font-family: "DM Sans", sans-serif;
   font-weight: 700;
   font-size: 45px;
+}
+
+header {
+  background-color: #F0EFE9;
+}
+header .container {
+  padding: 16px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "logo bars";
+}
+@media (min-width: 992px) {
+  header .container {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "logo cib social" "logo menu menu";
+  }
+}
+header .container .btn-menubars {
+  grid-area: bars;
+  font-size: 25px;
+  border: none;
+  background: transparent;
+}
+@media (min-width: 992px) {
+  header .container .btn-menubars {
+    display: none;
+  }
+}
+header .container .logotype {
+  grid-area: logo;
+  margin-right: 40px;
+}
+header .container .contactinformation-bar {
+  grid-area: cib;
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (min-width: 1200px) {
+  header .container .contactinformation-bar {
+    display: flex;
+  }
+}
+header .container .contactinformation-bar .content-box {
+  margin-right: 30px;
+  padding-right: 20px;
+  border-right: 1px solid #DBDAD5;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+header .container .contactinformation-bar .content-box i {
+  margin-right: 5px;
+  font-size: 1.2em;
+  color: #707070;
+}
+header .container .contactinformation-bar .content-box.last {
+  border: none;
+}
+header .container .socialmedia-bar {
+  grid-area: social;
+  display: none;
+}
+@media (min-width: 992px) {
+  header .container .socialmedia-bar {
+    display: block;
+  }
+  header .container .socialmedia-bar a {
+    color: #191919;
+    font-size: 1.3rem;
+    margin-left: 10px;
+  }
+  header .container .socialmedia-bar a:hover {
+    color: #666666;
+  }
+}
+header .container .menu {
+  grid-area: menu;
+  border-top: 1px solid #DAD9D3;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  position: relative;
+}
+@media (min-width: 992px) {
+  header .container .menu {
+    display: flex;
+  }
+}
+header .container .menu .loginknapp {
+  position: absolute;
+  animation: login 2s ease-in-out;
+  animation-delay: 1s;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  padding-top: 10px;
+  z-index: 999;
+}
+@keyframes login {
+  20% {
+    top: 0px;
+    right: 0px;
+  }
+  40% {
+    top: 50px;
+    right: 0px;
+  }
+  60% {
+    top: 50px;
+    right: 200px;
+  }
+  80% {
+    top: 50px;
+    right: -60px;
+  }
+  100% {
+    top: 50px;
+    right: 0px;
+  }
+}
+header .container nav a {
+  display: inline-block;
+  color: #191919;
+  text-decoration: none;
+  margin-right: 35px;
+  position: relative;
+}
+header .container nav a.active {
+  font-weight: 500;
+}
+header .container nav a.active:after, header .container nav a:hover::after {
+  content: "";
+  position: absolute;
+  font-weight: 500;
+  height: 2px;
+  width: 15px;
+  background-color: #191919;
+  left: 50%;
+  bottom: -3px;
+  transform: translate(calc(50% - 15px));
+}
+
+.showcase {
+  background-color: #F0EFE9;
+  position: relative;
+  z-index: 0;
+}
+.showcase .waves {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.showcase .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.showcase .container .content {
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+.showcase .container .content p {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  font-size: 1rem;
+}
+.showcase .container .content h1 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+@media (min-width: 375px) {
+  .showcase .container .content h1 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .showcase .container .content h1 {
+    font-size: 70px;
+  }
+}
+.showcase .container .content a {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 16px;
+  display: block;
+  border: 1px slid black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media (min-width: 1200px) {
+  .showcase .container .content a {
+    font-size: 16px;
+    display: inline-block;
+  }
+}
+.showcase .container img {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .showcase .container img {
+    display: block;
+  }
 }
 
 .logo .container {
@@ -390,8 +605,9 @@ footer {
   position: relative;
 }
 .our-services .waves {
+  color: black;
   position: absolute;
-  right: 0;
+  right: -100px;
   bottom: 0;
   display: none;
 }
@@ -1101,8 +1317,9 @@ footer {
 }
 @media (min-width: 1405px) {
   .article-and-news .container .flex-content {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 .article-and-news .container .flex-content p {
@@ -1125,7 +1342,7 @@ footer {
 }
 .article-and-news .container .flex-content .box1 img {
   width: 100%;
-  height: auto;
+  height: 300px;
 }
 .article-and-news .container .flex-content .box1 .image {
   position: relative;
@@ -1220,10 +1437,35 @@ footer {
   margin-bottom: 10px;
 }
 
+.Newsdetail .container .content-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.Newsdetail .container .content-right .oneside h1 {
+  padding: 30px;
+}
+.Newsdetail .container .content-right .oneside img {
+  padding: 30px;
+  width: 100%;
+}
+.Newsdetail .container .content-right .oneside p {
+  padding: 30px;
+}
+.Newsdetail .container .content-right .Otherside {
+  padding: 30px;
+  margin-top: 440px;
+}
+
 footer .footer-content {
   border-bottom: 1px solid #2b2b2b;
   position: relative;
   z-index: 0;
+  display: none;
+}
+@media (min-width: 600px) {
+  footer .footer-content {
+    display: flex;
+  }
 }
 footer .footer-content .right-wave {
   z-index: -1;

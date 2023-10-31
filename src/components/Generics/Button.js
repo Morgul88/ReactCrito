@@ -1,11 +1,25 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const Button = ({text,url}) => {
+const Button = ({type,text,url}) => {
+
+    const getButtonClassName = () => {
+        switch(type){
+            case ('yellow'):
+                return 'btn-yellow'
+            case ('trans'):
+                return 'btn-transparent'
+            default:
+                return 'btn-yellow'
+        }
+            
+    }
+
   return (
-    <a className="btn-yellow" href={url}>
+    <NavLink className={getButtonClassName()} to={url}>
         {text}
         <i className="fa-regular fa-arrow-up-right"></i>
-        </a>
+        </NavLink>
   )
 }
 
