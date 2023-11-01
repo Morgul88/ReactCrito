@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Newsbox = () => {
     const [value, setValue] = useState([]);
     
     useEffect(() => {
-       ChangePost()
+        console.log('value after fetching:', value);
+        ChangePost()
     },[])
 
     const specificIds = ["0dccab16-917a-437c-8216-5365b8b89ac3","1712fde0-7afc-44e7-ab41-7cffb65dc58b","f8994aa3-1a7d-4df4-abda-0f170377ce5f","c7bbc3d6-d88e-4d25-a3bf-faeb9fcefd15","bfb418f3-be63-4ded-a9c3-880409a465b7","b33aa046-3229-4990-b70d-1d44a6e0e3dd","9efedf73-c922-428b-89cd-911e23f7183e","78ca8156-5826-44ba-a8ba-b2a428e95afb","a0344661-267f-4f3d-ae16-c13a5045f00c",];
@@ -16,8 +18,9 @@ const Newsbox = () => {
         
         const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
         const data = await result.json()
-        console.log('running')
         setValue(data)
+        console.log('Data fetched from API:', data); // Lägg till denna rad för att logga datan
+        
     }
     
     
@@ -38,11 +41,11 @@ const Newsbox = () => {
 
                 <div className="flex-content">
                     
-                    {value.map((items) => {
-                        if (specificIds.includes(items.id)) {
+                    {value.map((items,index) => {
+                        {
                             return (
                                 
-                                    <a href="/NewsDetail" className="no-underline">
+                                    <NavLink to="/NewsDetail" className="no-underline" key={index}>
                                         <div className="box1">
                                             <div className="image">
                                                 <img className="pictures" src={items.imageUrl} alt="Women sitting on a chair next to a table" />
@@ -55,11 +58,11 @@ const Newsbox = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </NavLink>
                                 
                             );
                         }
-                        return null; // Om id inte finns i listan, returnera inget
+                        // return null; // Om id inte finns i listan, returnera inget
                     })}
                     {/* {value.map((items) => {
                         if (specificIdsSec.includes(items.id)) {

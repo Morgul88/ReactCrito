@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 const ArticleAndNews = () => {
     const [value, setValue] = useState([]);
     
     useEffect(() => {
-        ChangePost();
+        ChangePost()
     },[])
 
     const specificIds = ["c7bbc3d6-d88e-4d25-a3bf-faeb9fcefd15","bfb418f3-be63-4ded-a9c3-880409a465b7","b33aa046-3229-4990-b70d-1d44a6e0e3dd"];
     
     const ChangePost = async () => {
-        console.log('Hämtar api')
+        
         const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
         const data = await result.json()
-        console.log('running')
         setValue(data)
+        
     }
-    console.log(value)
+    
     
     return (
         <section className="article-and-news">
@@ -35,12 +36,13 @@ const ArticleAndNews = () => {
                 </div>
 
                 <div className="flex-content">
+                   
+                {value.slice(0,3).map((items, index) => {
                     
-                {value.map((items) => {
-                    if (specificIds.includes(items.id)) {
+                    {
                         return (
-                            
-                                <a href="#" className="no-underline">
+                                
+                                <NavLink to="#" className="no-underline" key={index}>
                                     <div className="box1">
                                         <div className="image">
                                             <img className="pictures" src={items.imageUrl} alt="Women sitting on a chair next to a table" />
@@ -53,11 +55,12 @@ const ArticleAndNews = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </a>
+                                </NavLink>
                             
                         );
                     }
-                    return null; // Om id inte finns i listan, returnera inget
+                    
+                    
                 })}
 
                 </div>
