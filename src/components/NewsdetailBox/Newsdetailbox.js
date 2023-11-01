@@ -1,8 +1,10 @@
 import React from 'react'
 import img_lady from '../../assets/images/Image (12).png'
 const Newsdetailbox = () => {
+
   return (
-    <section className='Newsdetail'>
+    
+    <section className='Newsdetail' >
         <div className='container'>
             
             <div className='content-right'>

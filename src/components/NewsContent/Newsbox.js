@@ -6,7 +6,7 @@ const Newsbox = () => {
     const [value, setValue] = useState([]);
     
     useEffect(() => {
-        console.log('value after fetching:', value);
+        
         ChangePost()
     },[])
 
@@ -19,7 +19,7 @@ const Newsbox = () => {
         const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
         const data = await result.json()
         setValue(data)
-        console.log('Data fetched from API:', data); // Lägg till denna rad för att logga datan
+        
         
     }
     

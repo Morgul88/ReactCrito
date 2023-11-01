@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 
 const ArticleAndNews = () => {
     const [value, setValue] = useState([]);
-    
+    const location = useLocation()
     useEffect(() => {
         ChangePost()
     },[])
 
-    const specificIds = ["c7bbc3d6-d88e-4d25-a3bf-faeb9fcefd15","bfb418f3-be63-4ded-a9c3-880409a465b7","b33aa046-3229-4990-b70d-1d44a6e0e3dd"];
+    
     
     const ChangePost = async () => {
         
@@ -19,9 +20,18 @@ const ArticleAndNews = () => {
         
     }
     
+    if (location.pathname === '/NewsDetail') {
+        const element = document.querySelector('.article-and-news');
+        const bakgrund = '#f0efe9';
+    
+        if (element) {
+            element.style.backgroundColor = bakgrund; //Går in och byter färg om elementet inte är null
+            
+        }
+    }
     
     return (
-        <section className="article-and-news">
+        <section className={`article-and-news${location.pathname === '/NewsDetail' ? ' blue-bg' : ''}`}>
             
             <div className="container">
 
@@ -37,7 +47,7 @@ const ArticleAndNews = () => {
 
                 <div className="flex-content">
                    
-                {value.slice(0,3).map((items, index) => {
+                {value.slice(0,3).map((items,index) => {
                     
                     {
                         return (
