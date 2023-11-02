@@ -7,16 +7,20 @@ import Contacts from './view/Contacts';
 import News from './view/News';
 import NewsDetails from './view/NewsDetails';
 import './App.css';
-
+import Header from './components/Header/Header';
 import NotFound from './view/NotFound';
-
+import Footer from './components/Footer/Footer';
+import AutoScroll from './components/AutoScrollToTop/AutoScroll';
+import FixedHead from './components/FixHead/FixedHead';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      
+      <AutoScroll/>
+      <FixedHead/>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/contacts' element={<Contacts />} />
@@ -24,7 +28,7 @@ root.render(
         <Route path='/Newsdetail' element={<NewsDetails />} />
         <Route path='*' element={<NotFound />}/>
       </Routes>
-      
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

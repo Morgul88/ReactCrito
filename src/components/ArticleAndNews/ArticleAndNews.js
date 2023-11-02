@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink} from 'react-router-dom';
+import { Link,NavLink} from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 
 const ArticleAndNews = () => {
     const [value, setValue] = useState([]);
     const location = useLocation()
+
     useEffect(() => {
         ChangePost()
     },[])
 
-    
-    
     const ChangePost = async () => {
         
         const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
@@ -20,18 +19,8 @@ const ArticleAndNews = () => {
         
     }
     
-    if (location.pathname === '/NewsDetail') {
-        const element = document.querySelector('.article-and-news');
-        const bakgrund = '#f0efe9';
-    
-        if (element) {
-            element.style.backgroundColor = bakgrund; //Går in och byter färg om elementet inte är null
-            
-        }
-    }
-    
     return (
-        <section className={`article-and-news${location.pathname === '/NewsDetail' ? ' blue-bg' : ''}`}>
+        <section className="article-and-news" style={{ backgroundColor: location.pathname === '/NewsDetail' ? '#f0efe9' : '' }}>
             
             <div className="container">
 
@@ -41,7 +30,7 @@ const ArticleAndNews = () => {
                     </div>
                     <div className="content-buttom">
                         <h2>Get Every Single Article & News</h2>
-                        <a className="btn-yellow" target="_blank" href="Browse-team.html">Browse Team <i className="fa-regular fa-arrow-up-right"></i></a>
+                        <Link className="btn-yellow" target="_blank" to="Browse-team.html">Browse Team <i className="fa-regular fa-arrow-up-right"></i></Link>
                     </div>
                 </div>
 
@@ -75,11 +64,11 @@ const ArticleAndNews = () => {
 
                 </div>
                 <div className="dots more">
-                    <a href="#"><i className="fa-solid fa-circle fa-xs"></i></a>
-                    <a href="#"><i className="fa-solid fa-circle fa-xs"></i></a>
-                    <a href="#"><i className="fa-solid fa-circle fa-xs"></i></a>
-                    <a href="#"><i className="fa-solid fa-circle fa-xs"></i></a>
-                    <a href="#"><i className="fa-solid fa-circle fa-xs"></i></a>
+                    <Link to="#"><i className="fa-solid fa-circle fa-xs"></i></Link>
+                    <Link to="#"><i className="fa-solid fa-circle fa-xs"></i></Link>
+                    <Link to="#"><i className="fa-solid fa-circle fa-xs"></i></Link>
+                    <Link to="#"><i className="fa-solid fa-circle fa-xs"></i></Link>
+                    <Link to="#"><i className="fa-solid fa-circle fa-xs"></i></Link>
                 </div>
 
             </div>
