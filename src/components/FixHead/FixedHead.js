@@ -12,9 +12,9 @@ const FixedHead = () => {
         })
     },[])
 
-    // const scrollToTop = () => {
-    //     window.scrollTo({top:0, behavior:'smooth'})
-    // }
+    const scrollToTop = () => {
+        window.scrollTo({top:0, behavior:'smooth'})
+    }
     const changeClass = () => {
         if (position < 100) {
             console.log('Här så väljs klassen fixed-header')
@@ -30,10 +30,10 @@ const FixedHead = () => {
   return (
     <div className={changeClass()}>
         <nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/services">Service</NavLink>
-            <NavLink to="/News">News</NavLink>
-            <NavLink to="/Contacts">Contact</NavLink>       
+            <NavLink onClick={scrollToTop} to="/">Home</NavLink>
+            <NavLink onClick={scrollToTop} to="/services">Service</NavLink>
+            <NavLink onClick={scrollToTop} to="/News">News</NavLink>
+            <NavLink onClick={scrollToTop} to="/Contacts">Contact</NavLink>       
         </nav>
     </div>
   )
