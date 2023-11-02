@@ -1355,7 +1355,7 @@ header .container nav a.active:after, header .container nav a:hover::after {
 @media (min-width: 1405px) {
   .article-and-news .container .flex-content {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }

@@ -18,7 +18,7 @@ const ArticleAndNews = () => {
         setValue(data)
         
     }
-    
+
     return (
         <section className="article-and-news" style={{ backgroundColor: location.pathname === '/NewsDetail' ? '#f0efe9' : '' }}>
             
@@ -36,31 +36,31 @@ const ArticleAndNews = () => {
 
                 <div className="flex-content">
                    
-                {value.slice(0,3).map((items,index) => {
-                    
-                    {
-                        return (
-                                
-                                <NavLink to="#" className="no-underline" key={index}>
-                                    <div className="box1">
-                                        <div className="image">
-                                            <img className="pictures" src={items.imageUrl} alt="Women sitting on a chair next to a table" />
-                                            <p>{items.category}</p>
-                                            <h2>{items.title}</h2>
-                                            <p>{items.content}</p>
-                                            <div className="date">
-                                                <h4>25</h4>
-                                                <p className="month">mars</p>
+                    {value.slice(0,3).map((items,index) => {
+                        
+                        {
+                            return (
+                                    
+                                    <NavLink to="#" className="no-underline" key={index}>
+                                        <div className="box1">
+                                            <div className="image">
+                                                <img className="pictures" src={items.imageUrl} alt="Women sitting on a chair next to a table" />
+                                                <p>{items.category}</p>
+                                                <h2>{items.title}</h2>
+                                                <p>{items.content}</p>
+                                                <div className="date">
+                                                    <h4>25</h4>
+                                                    <p className="month">mars</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </NavLink>
-                            
-                        );
-                    }
-                    
-                    
-                })}
+                                    </NavLink>
+                                
+                            );
+                        }
+                        
+                        
+                    })}
 
                 </div>
                 <div className="dots more">
