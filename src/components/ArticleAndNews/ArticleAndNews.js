@@ -9,6 +9,7 @@ const ArticleAndNews = () => {
 
     useEffect(() => {
         ChangePost()
+
     },[])
 
     const ChangePost = async () => {

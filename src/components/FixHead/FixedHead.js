@@ -9,6 +9,11 @@ const FixedHead = () => {
         window.addEventListener('scroll', () => {
             setPosition(window.scrollY)
             console.log(position)
+
+            return () => {
+                
+                window.removeEventListener('scroll',() => {});
+              };
         })
     },[])
 
